@@ -8,6 +8,8 @@ YouTube is the worldwide video sharing platform, which share various categories 
 
 In this regard, the objective of the project is to analyse the dataset, which consists of CSVs and Jsons files, by using a Data Lakehouse with Snowflake. The procedure of the project includes data ingestion, data cleaning, data analysis and answering business questions. Snowflake is a main data warehouse and SQL platform used in this project, in order to load and analyse data. 
 
+![image](https://github.com/SimonLim03/Youtube-Videos-Data-Lakehouse/assets/150989115/ab2ef781-0fca-4e95-a44b-620e53c3f115)
+
 
 ## Presentation of Dataset
 There are two types of dataset files, one with CSV file and the other with Json file. For CSV file, dataset includes several months of daily trending YouTube video records for 11 different countries, including India, USA, Great Britain, Germany, Canada, France, Russia, Brazil, Mexico, South Korea and Japan. Hence, there are 11 CSVs files representing top trending videos of each country. Various data of daily video records are included in dataset, such as video_id, title, published date, category id, number of views, likes, dislikes, channel id, comment counts and trending date etc. 
