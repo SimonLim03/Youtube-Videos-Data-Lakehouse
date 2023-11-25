@@ -1,0 +1,4 @@
+CREATE OR REPLACE TABLE table_youtube_duplicates AS
+SELECT *
+FROM table_youtube_final
+QUALIFY ROW_NUMBER() OVER (PARTITION BY VIDEO_ID, TRENDING_DATE, COUNTRY ORDER BY country) = 1;
