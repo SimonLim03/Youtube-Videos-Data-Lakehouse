@@ -14,9 +14,9 @@ There are two types of dataset files, one with CSV file and the other with Json 
 For Json file, dataset also include category id, title and channel id for each country. 
 
 
-## Project Structure
-0.	Before ingesting data, there are two necessary processes to be set up. The first step was to set up a cloud storage account on Microsoft Azure and snowflake account was a necessary process. Subsequently, it was also necessary to set up a Storage Integration between Azure and Snowflake. 
+## PIPELINE OF THE PROJECT 
+- 0.	Before ingesting data, there are two necessary processes to be set up. The first step was to set up a cloud storage account on Microsoft Azure and snowflake account was a necessary process. Subsequently, it was also necessary to set up a Storage Integration between Azure and Snowflake. 
 
-1.	Data Ingestion 
-1.1.	Stage, named ‘stage_bde_at1’, was created to store, load and unload data files. 
-1.2.	For CSVs files, external tables for each country were created, adding the new column ‘country ’.  (11 External Tables). Columns in external tables include video_id, title, publish date, channel id, channel title, category id, trending date, view count, likes, dislikes, comment count, comment disabled and country.
+- 1.	Data Ingestion 
+- 1.1.	Stage, named ‘stage_bde_at1’, was created to store, load and unload data files. 
+- 1.2.	For CSVs files, external tables for each country were created, adding the new column ‘country ’.  (11 External Tables). Columns in external tables include video_id, title, publish date, channel id, channel title, category id, trending date, view count, likes, dislikes, comment count, comment disabled and country.
