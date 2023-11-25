@@ -1,80 +1,22 @@
-# Sales Revenue Prediction Application (Predictive and Forecasting)
+# Youtube Trending Videos Data Lakehouse with Snowflake 
 
 ## Author
 Name: Simon Lim
 
 ## Description
-This application involves two machine learning models that were established for business purposes.
-One model is a predictive model using a Machine Learning algorithm to accurately predict the sales revenue for a given item in a specific store at a given date.
-The other is a forecasting model using a time-series analysis that can forecast the total sales revenue across all stores and items for the next 7 days.
-The models have been deployed using Fastapi, Docker and Heroku, which enable modle's access to users online anytime. 
+YouTube is the worldwide video sharing platform, which share various categories and top trending videos on the platform. Top trending videos are evaluated based on video’s number of views, shares, likes and comments etc. A dataset with a daily record of the top popular and trending videos has been extracted through YouTube API. 
 
-The American retailer that has 10 stores across 3 different states (California (CA), Texas (TX), 
-Wisconsin (WI)) sells a variety of items from 3 different categories, including hobbies, foods and 
-household. The retailer has a large of amount of data for each item’s selling price, sales revenue 
-and quantity of sales records across stores and dates. In this regard, machine learning and timeseries models can be potentially helpful in a variety of ways by predicting the sales revenue for a 
-specific item and forecasting the total revenues for next few days
-
-![image](https://github.com/SimonLim03/Sales-Revenue-Prediction-App/assets/150989115/02d39b0d-4080-41c4-afea-ac6e15b2998e)
+In this regard, the objective of the project is to analyse the dataset, which consists of CSVs and Jsons files, by using a Data Lakehouse with Snowflake. The procedure of the project includes data ingestion, data cleaning, data analysis and answering business questions. Snowflake is a main data warehouse and SQL platform used in this project, in order to load and analyse data. 
 
 
-## How to Run the Program
-The application was available online via Heroku, but currently it has been shut down due to monthly costs.
-However, there is the other way to run the application. Docker and Fastapi were used to run the application.
-
-Execute the following steps to run the app:
-- Clone the master branch from the github repo or download a zip folder:  https://github.com/SimonLim03/Sales-Revenue-Prediction-App.git
-- Navigate to the root directory of the project in your terminal
-- Run the following commands:
-    - `docker build -t my_fast_api .`
-    - `docker run -p 8000:80 my_fast_api`
-    
-- There are two API endpoints for descriptions of the app and running the app.
-- http://localhost:8000/ : Description of the application, including what to expect for input parameters.
-- http://localhost:8000/docs/ : Runnining the application
-- /sales/stores/items/ : Predictive Model (predict the sales revenue for a given item in a specific store at a given date)
-  ![image](https://github.com/SimonLim03/Sales-Revenue-Prediction-App/assets/150989115/4c3d058b-e697-465e-9d27-7c49ecc8abc1)
-  ![image](https://github.com/SimonLim03/Sales-Revenue-Prediction-App/assets/150989115/f57fcd2f-71e3-4850-9a85-0db2f35b4290)
-
-- /sales/national/ : Forecasting Model (forecast the total sales revenue across all stores and items for the next 7 days)
-  ![image](https://github.com/SimonLim03/Sales-Revenue-Prediction-App/assets/150989115/0372871a-b4b9-4739-affb-e98c105b1595)
-  ![image](https://github.com/SimonLim03/Sales-Revenue-Prediction-App/assets/150989115/6127decd-f02a-4636-995e-dd515e0d3bbd)
-
-
-
+## Presentation of Dataset
+There are two types of dataset files, one with CSV file and the other with Json file. For CSV file, dataset includes several months of daily trending YouTube video records for 11 different countries, including India, USA, Great Britain, Germany, Canada, France, Russia, Brazil, Mexico, South Korea and Japan. Hence, there are 11 CSVs files representing top trending videos of each country. Various data of daily video records are included in dataset, such as video_id, title, published date, category id, number of views, likes, dislikes, channel id, comment counts and trending date etc. 
+For Json file, dataset also include category id, title and channel id for each country. 
 
 
 ## Project Structure
-<p>
-/models: This folder contains model artefacts that were used to predict travel fares.
-</p>
+0.	Before ingesting data, there are two necessary processes to be set up. The first step was to set up a cloud storage account on Microsoft Azure and snowflake account was a necessary process. Subsequently, it was also necessary to set up a Storage Integration between Azure and Snowflake. 
 
-<p>
-/notebooks: All the notebooks containing codes, preparation, EDA and precedures. 
-</p>
-
-<p>
-/report: Experimental report
-</p>
-
-<p>
-/src: Storage of functions used in experiments
-</p>
-
-## Input Parameters (Predictive Model, /sales/stores/items/)
-
-| Input | Description | 
-|:------------:|:------------:|
-| idem_id | item id of the specific item (e.g., HOBBIES_1_001) | 
-| store_id | store id of the item (e.g., CA_1 , WI_3) | 
-| Day | Day of Month (i.e., bewteen 1 and 31) |
-| Month | Month of Year in string format (e.g., January, December) | 
-| Year | Year in yyyy format |
-
-## Input Parameters (Forecasting Model, /sales/national/)
-
-| Input | Description | 
-|:------------:|:------------:|
-| specific date | specific date in format yyyy-mm-dd (e.g., 2023-01-01) | 
-| days | forecasting next days (e.g., 7 if forecasting next 7 days, 10 if foreacsting next 10 days) | 
-
+1.	Data Ingestion 
+1.1.	Stage, named ‘stage_bde_at1’, was created to store, load and unload data files. 
+1.2.	For CSVs files, external tables for each country were created, adding the new column ‘country ’.  (11 External Tables). Columns in external tables include video_id, title, publish date, channel id, channel title, category id, trending date, view count, likes, dislikes, comment count, comment disabled and country.
