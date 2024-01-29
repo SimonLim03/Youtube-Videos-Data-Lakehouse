@@ -4,9 +4,11 @@
 Name: Simon Lim
 
 ## Description
-YouTube is the worldwide video sharing platform, which share various categories and top trending videos on the platform. Top trending videos are evaluated based on video’s number of views, shares, likes and comments etc. A dataset with a daily record of the top popular and trending videos has been extracted through YouTube API. 
+- YouTube is the worldwide video sharing platform, which share various categories and top trending videos on the platform. Top trending videos are evaluated based on video’s number of views, shares, likes and comments etc. A dataset with a daily record of the top popular and trending videos has been extracted through YouTube API. 
 
-In this regard, the objective of the project is to analyse the dataset, which consists of CSVs and Jsons files, by using a Data Lakehouse with Snowflake. The procedure of the project includes data ingestion, data cleaning, data analysis and answering business questions. Snowflake is a main data warehouse and SQL platform used in this project, in order to load and analyse data. 
+- In this regard, the objective of the project is to analyse the dataset, which consists of CSVs and Jsons files, by using a Data Lakehouse with Snowflake. The procedure of the project includes data ingestion, data cleaning, data analysis and answering business questions. Snowflake is a main data warehouse and SQL platform used in this project, in order to load and analyse data. 
+
+- Analysis of Youtube Trending Videos has helped youtube creators by providing current trending video categories and channels that have been mostly created and viewed in Youtube.
 
 ![image](https://github.com/SimonLim03/Youtube-Videos-Data-Lakehouse/assets/150989115/ab2ef781-0fca-4e95-a44b-620e53c3f115)
 
