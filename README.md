@@ -49,11 +49,11 @@ For Json file, dataset also include category id, title and channel id for each c
 - 3.5.	Channeltitle, that has the most distinct videos and its number were displayed.
   ![image](https://github.com/SimonLim03/Youtube-Videos-Data-Lakehouse/assets/150989115/9141409a-b01f-4f01-a539-be087c61deb8)
 
-### 4. Business Question
-- 4.1. If I was to launch a new YouTube channel, which category (excluding “Music” and “Entertainment”) of video would I be trying to create to have them appear in the top trend of YouTube?
+### 4. Business Questions
+- Q1. If I was to launch a new YouTube channel, which category (excluding “Music” and “Entertainment”) of video would I be trying to create to have them appear in the top trend of YouTube?
 -	I would create ‘Gaming’ category, as it has the highest total_view_count (195569682751) out of all categories. 
 ![image](https://github.com/SimonLim03/Youtube-Videos-Data-Lakehouse/assets/150989115/24baefa5-a57b-4273-a7db-fb5d6cd30021)
-- 4.2. Will this strategy work in every country?
+- Q2. Will this strategy work in every country?
 -	No, unfortunately it does not work in every country. There are many countries, in which “People & Blog” have higher total_view_count than “Gaming” category, including Japan, Korea, India, Russia, Brazil etc. Therefore, it is important to create a category of video, depending on country and other potential variables, such as age and gender.
   ![image](https://github.com/SimonLim03/Youtube-Videos-Data-Lakehouse/assets/150989115/dbf69742-413e-41bf-9256-dfb7d006055a)
 
