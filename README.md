@@ -1,4 +1,4 @@
-# Youtube Trending Videos Data Lakehouse with Snowflake 
+# Analysis of YouTube Trending Videos
 
 ## Author
 Name: Simon Lim
